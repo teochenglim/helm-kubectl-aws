@@ -27,4 +27,5 @@ RUN apk -Uuv add groff less python3 py3-pip bash gettext
 RUN pip3 install awscli
 RUN rm /var/cache/apk/*
 
+COPY eks.sh /root/
 CMD bash
