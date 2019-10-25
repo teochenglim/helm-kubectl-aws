@@ -9,5 +9,5 @@ $ docker run -it \
     teochenglim/helm-kubectl-aws bash
 
 ## ECR Login
-$ aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION
+$ $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
 ```
