@@ -23,7 +23,7 @@ RUN apk add --no-cache ca-certificates bash git openssh curl \
     && wget -q https://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
     && chmod +x /usr/local/bin/helm
 
-RUN apk -Uuv add groff less python3 py3-pip bash gettext
+RUN apk -Uuv add groff less python3 py3-pip bash gettext jq
 RUN pip3 install awscli
 RUN rm /var/cache/apk/*
 

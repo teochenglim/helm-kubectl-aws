@@ -1,8 +1,7 @@
 clusterName=$1
 region=$2
-ips=`aws ec2 describe-network-interfaces --region $region --filters Name=description,Values="Amazon EKS $clusterName" | grep "PrivateIpAddress\"" | cut -d ":" -f 2 |  sed 's/[*",]//g' | sed 's/^\s*//'| uniq`
-endpoint=`aws eks describe-cluster --name $clusterName --region $region | grep endpoint\" | cut -d ":" -f 3 | sed 's/[\/,"]//g'`
-IFS=$'\n'
+ips=$(aws ec2 describe-network-interfaces --region $2 --filters Name=description,Values="Amazon EKS application-staging" | jq -r '.NetworkInterfaces[].PrivateIpAddress')
+endpoint=$(aws eks describe-cluster --name $1 --region $2 | jq -r '.cluster.endpoint' | cut -d '/' -f 3)
 # create backup of /etc/hosts
 cp /etc/hosts /etc/hosts_backup
 sh -c "cat /etc/hosts  | grep -v $endpoint > /etc/hosts_new"
