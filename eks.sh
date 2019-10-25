@@ -3,11 +3,11 @@ ips=`aws ec2  describe-network-interfaces --filters Name=description,Values="Ama
 endpoint=`aws eks describe-cluster --name $clusterName | grep endpoint\" | cut -d ":" -f 3 | sed 's/[\/,"]//g'`
 IFS=$'\n'
 # create backup of /etc/hosts
-sudo cp /etc/hosts /etc/hosts_backup
-sudo sh -c "cat /etc/hosts  | grep -v $endpoint &gt; /etc/hosts_new"
- 
+cp /etc/hosts /etc/hosts_backup
+sh -c "cat /etc/hosts  | grep -v $endpoint &gt; /etc/hosts_new"
+
 for item in $ips
 do
-    sudo sh -c "echo $item  $endpoint &gt;&gt; /etc/hosts_new"
+  sh -c "echo $item  $endpoint &gt;&gt; /etc/hosts_new"
 done
-sudo  sh -c "cat /etc/hosts_new &gt; /etc/hosts"
+sh -c "cat /etc/hosts_new &gt; /etc/hosts"
