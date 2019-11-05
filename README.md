@@ -20,13 +20,17 @@ https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html
 
 ```shell
 ## Creating a New Repository to Scan on Push
-aws ecr create-repository --repository-name name --image-scanning-configuration scanOnPush=true --region us-east-2
+aws ecr create-repository --repository-name name \
+    --image-scanning-configuration scanOnPush=true --region us-east-2
 ## Configure an Existing Repository to Scan on Push
-aws ecr put-image-scanning-configuration --repository-name name --image-scanning-configuration scanOnPush=true --region us-east-2
+aws ecr put-image-scanning-configuration --repository-name name \
+    --image-scanning-configuration scanOnPush=true --region us-east-2
 ## Manually Scanning an Image
-aws ecr start-image-scan --repository-name name --image-id imageTag=tag_name --region us-east-2
+aws ecr start-image-scan --repository-name name --image-id \
+    imageTag=tag_name --region us-east-2
 ## Retrieving Scan Findings
-aws ecr describe-image-scan-findings --repository-name name --image-id imageTag=tag_name --region us-east-2
+aws ecr describe-image-scan-findings --repository-name name \
+    --image-id imageTag=tag_name --region us-east-2
 
 ```
 
