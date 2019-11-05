@@ -32,9 +32,9 @@ aws ecr describe-image-scan-findings --repository-name name --image-id imageTag=
 
 3. FAQ
 
-  1. aws ecr doesn't have "describe-image-scan-findings"
+  * aws ecr doesn't have "describe-image-scan-findings"
 
-  2. Patch the awscli not using latest version on homebrew. Homebrew is still using 1.16.260, but pip is at 1.16.273 as per today 5 Nov 2019
+  * Patch the awscli not using latest version on homebrew. Homebrew is still using 1.16.260, but pip is at 1.16.273 as per today 5 Nov 2019
 
     > https://github.com/Homebrew/homebrew-core/blob/master/Formula/awscli.rb
 
@@ -48,7 +48,7 @@ aws ecr describe-image-scan-findings --repository-name name --image-id imageTag=
   sudo pip3 install -U awscli
   ```
 
-  2. OpenSSL error with libssl and libcrypto while using pip3
+  * OpenSSL error with libssl and libcrypto while using pip3
   
     https://someguys.blog/2019-10-09-python-abort-on-macos-catalina/
 
