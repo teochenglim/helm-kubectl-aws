@@ -27,6 +27,7 @@ aws ecr put-image-scanning-configuration --repository-name name --image-scanning
 aws ecr start-image-scan --repository-name name --image-id imageTag=tag_name --region us-east-2
 ## Retrieving Scan Findings
 aws ecr describe-image-scan-findings --repository-name name --image-id imageTag=tag_name --region us-east-2
+
 ```
 
 3. FAQ
@@ -41,6 +42,7 @@ aws ecr describe-image-scan-findings --repository-name name --image-id imageTag=
 
 
   ```shell
+  
   aws ecr help # that's no container scanning methods
   brew uninstall awscli
   sudo pip3 install -U awscli
@@ -48,7 +50,7 @@ aws ecr describe-image-scan-findings --repository-name name --image-id imageTag=
 
   2. OpenSSL error with libssl and libcrypto while using pip3
   
-  https://someguys.blog/2019-10-09-python-abort-on-macos-catalina/
+    https://someguys.blog/2019-10-09-python-abort-on-macos-catalina/
 
     1. reinstall openssl with the correct point of dynamic link library. default link to open 1.0.0 but latest is 1.0.2t
 
