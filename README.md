@@ -16,7 +16,8 @@
     ```
 
 2. For ECR container scanning
-https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html
+
+  > https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html
 
     ```shell
     ## Creating a New Repository to Scan on Push
@@ -53,7 +54,7 @@ https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html
       ```
 
   * OpenSSL error with libssl and libcrypto while using pip3
-  
+
     https://someguys.blog/2019-10-09-python-abort-on-macos-catalina/
 
     1. reinstall openssl with the correct point of dynamic link library. default link to open 1.0.0 but latest is 1.0.2t
