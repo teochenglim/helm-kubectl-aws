@@ -17,7 +17,7 @@
 
 2. For ECR container scanning
 
-  > https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html
+    > https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html
 
     ```shell
     ## Creating a New Repository to Scan on Push
